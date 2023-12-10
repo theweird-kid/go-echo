@@ -2,7 +2,7 @@ package services
 
 import (
 	"encoding/json"
-	"io"
+	"os"
 )
 
 type Data struct {
@@ -17,7 +17,7 @@ type Payload struct {
 }
 
 func raw() ([]Data, error) {
-	r, err := io.ReadFile("data.json")
+	r, err := os.ReadFile("data.json")
 	if err != nil {
 		return nil, err
 	}
